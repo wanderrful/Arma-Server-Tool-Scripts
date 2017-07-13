@@ -1,5 +1,5 @@
 # SYNTAX:
-#   a3ss mod1 mod2 mod3
+#   a3ss -m mod1 mod2 mod3
 
 
 
