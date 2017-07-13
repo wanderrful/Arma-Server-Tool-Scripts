@@ -1,5 +1,11 @@
+# Arma 3 Start Server.sh
+#
 # SYNTAX:
-#   a3ss -m mod1 mod2 mod3
+#   ./a3ss.sh -m mod1 mod2 mod3 ...
+#
+# Run this script to launch your server with only the given mods enabled!
+# I recommend symlinking into /usr/local/bin so you can just say "a3ss -m mod1 mod2 ..."
+#
 
 
 
@@ -83,15 +89,16 @@ if [ "$errorFlag" ]
 then
     exit 1
 else
+    # verify that the user trying to run the server is the appropriate one (replace with your server's proper userid!)
     if [ "$(id -u)" == "1001" ]
     then
 	echo "*** Server is now starting!"
-	# INSERT START SERVER COMMAND WITH LAUNCH PARAMS HERE!
 
+	# actually run the server now (feel free to replace launch params with your own things as needed
 	cd $ServerRootFolder
 	./arma3server -port=2302 -cfg=serverconfig/basic.cfg -config=serverconfig/server.cfg -name=server -random=public_ranking.txt -mod="${GivenMods}" -world=Empty -loadMissionToMemory -netLog -filePatching -noBenchmark -noSound -cpuCount=4 -exThreads=7 1>>"/home/arma3/arma3/rpt/server_$(date +%s).rpt" 2>>"/home/arma3/arma3/rpt/server_$(date +%s).rpt"
     else
-	echo "*** ERROR: server only starts for the 'arma3' user!"
+	echo "*** ERROR: server only starts for the appropriate arma3 server user!"
 	exit 1
     fi
 fi
