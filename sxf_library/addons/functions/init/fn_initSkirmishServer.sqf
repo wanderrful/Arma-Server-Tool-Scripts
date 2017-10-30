@@ -1,0 +1,1 @@
+sv_initSkirmish = true;  publicVariable "sv_initSkirmish";
