@@ -1,0 +1,1 @@
+execVM "\tangohunt_core\initServer.sqf";

@@ -1,0 +1,117 @@
+class Params
+{
+	class DesiredEnemyCount
+	{
+		title = "Desired enemy count";
+		values[] = {10, 15, 20, 25, 30, 35, 40, 45, 50};
+		default = 30;
+	};
+	class MissionTimeLimit
+	{
+		title = "Mission time limit (in minutes)";
+		values[] = {3, 5, 10, 15, 20};
+		default = 10;
+	};
+	class MaximumNumberOfRounds
+	{
+		title = "Number of rounds until map change";
+		values[] = {1,2,3,4,5,6,7,8,9,10};
+		default = 5;
+	};
+};
+
+class cfgSounds
+{
+	class Gottem
+	{
+		name = "Gottem";
+		sound[] = {"sounds\gottem.ogg", db-5, 1.0};
+		titles[] = {0, ""};
+	};
+	class Airhorn
+	{
+		name = "Airhorn";
+		sound[] = {"sounds\airhorn.ogg", db-2, 1.0};
+		titles[] = {0, ""};
+	};
+	class ATeam
+	{
+		name = "ATeam";
+		sound[] = {"sounds\a-team.ogg", db+5, 1.0};
+		titles[] = {0, ""};
+	};
+	class Airwolf
+	{
+		name = "Airwolf";
+		sound[] = {"sounds\airwolf.ogg", db-2, 1.0};
+		titles[] = {0, ""};
+	};
+	class MissionSuccessObjectiveCompleted
+	{
+		name = "MissionSuccessObjectiveCompleted";
+		sound[] = {"sounds\mission-success-objective-completed.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+	class MissionFailureYourTeamWasWipedOut
+	{
+		name = "MissionFailureYourTeamWasWipedOut";
+		sound[] = {"sounds\mission-failure-your-team-was-wiped-out.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+	class MissionFailureAHostageWasKilled
+	{
+		name = "MissionFailureAHostageWasKilled";
+		sound[] = {"sounds\mission-failure-a-hostage-was-killed.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+};
+
+class CfgHints
+{
+	class MyVRStuff
+	{
+		displayName = "VR THUNT";
+		class THUNT_IntroHint
+		{	//everything in this layer goes into the Field Manual
+			displayName = "VR Terrorist Hunt by 64";
+			displayNameShort = "Mission Info";
+			description = "This mission is part of a series of round-based Terrorist Hunt missions inspired by the original Rainbow Six franchise of games.  Your goal is to eliminate all enemy AI units in the shoothouse.  If all players are dead, all players will respawn together to suit up and begin a new round of play.  You're welcome.";
+            tip = "This is a simple tip text line.";
+			arguments[] = {};
+			class THUNT_IntroSubHint
+			{	//everything in this layer is actually displayed when calling the BIS_fnc_advHint function
+				displayName = "VR Terrorist Hunt by 64";
+				displayNameShort = "Basic Mission Information";
+				description = "This mission is part of a series of round-based Terrorist Hunt missions inspired by the original Rainbow Six franchise of games.<br/><br/>%2Your goal is to %3eliminate all %11 enemy AI units%4 in the shoothouse.<br/>%2Use the scroll menu at the white board in front of you to begin the mission.<br/>%2If all players in the AO are killed, %3you will respawn together all at once%4 to suit up and begin a new round of play.<br/>%2The mission %3will automatically end%4 and cycle to the next VR challenge after 5 failed attempts.";
+				tip = "";
+				arguments[] = 
+				{
+					"paramsArray select 0"
+				};
+				image = "images\goon-logo.jpg";
+				noImage = true;
+		   };
+		};
+	};
+};
+
+class cfgNotifications
+{
+	class sxf_MissionStart
+	{
+		title = "Countdown";
+		description = "A new round has started!";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+		duration = 10;
+		priority = 0;
+	};
+};
+
+class CfgDebriefing
+{
+	class NoChancesRemaining
+	{
+		title = "Game Over";
+		subtitle = "Loading the next mission...";
+	};
+};

@@ -1,0 +1,1 @@
+_this execvM "\tangohunt_core\onPlayerRespawn.sqf";

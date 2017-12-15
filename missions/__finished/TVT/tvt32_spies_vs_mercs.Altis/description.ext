@@ -1,0 +1,35 @@
+class cfgNotifications
+{
+	// Notification Template
+	class Template
+	{
+		title = "";
+		iconPicture = ""; 
+		iconText = "";
+		description = ""; 
+		color[] = {1,1,1,1};
+		duration = 5; 
+		priority = 0; 
+		difficulty[] = {};
+	};
+
+	// A generic warning notification
+	class Alert
+	{
+		title = "ALERT";
+		description = "%1";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 3;
+		priority = 9;
+	};
+
+	// A replacement for the vanilla Countdown.  Only difference is the exclamation mark.
+	class CountdownTimer
+	{
+		title = "Countdown";
+		description = "%1 remaining!";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+		duration = 10;
+		priority = 0;
+	};
+};

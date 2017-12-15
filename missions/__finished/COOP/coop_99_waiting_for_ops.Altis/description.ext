@@ -1,0 +1,40 @@
+author = "Love Stole the Day";
+onLoadName = "Waiting for Ops";
+onLoadIntro = "I guess this is a beta or something?";
+onLoadMissionTime = 1;
+debriefing = 0;
+
+respawn = 3;
+respawnDelay = 5;
+respawnDialog = 1;
+
+disabledAI = 1;
+
+showGPS = 1;
+showCompass = 1;
+showMap = 1;
+showWatch = 1;
+
+enableDebugConsole = 0;
+joinUnassigned = 1;
+corpseManagerMode = 1;
+corpseLimit = 5;
+corpseRemovalMinTime = 60;
+corpseremovalMaxTime = 180;
+
+class CfgSounds
+{
+	sounds[] = {};
+	class introSound
+	{
+		name = "introSound";
+		sound[] = {"sounds\waiting_for_ops_audio_soundbyte.ogg", 1, 1};
+		titles[] = {0, "In a world, where no one in your ArmA group shows up on time to play the scheduled mission, you know you only have one choice: Waiting for Ops"};
+	};
+	class waveSpawned
+	{
+		name = "waveSpawned";
+		sound[] = {"sounds\roundBegin.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+};
