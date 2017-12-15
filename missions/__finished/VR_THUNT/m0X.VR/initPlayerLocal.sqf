@@ -1,0 +1,1 @@
+_this execVM "\tangohunt_core\initPlayerLocal.sqf";

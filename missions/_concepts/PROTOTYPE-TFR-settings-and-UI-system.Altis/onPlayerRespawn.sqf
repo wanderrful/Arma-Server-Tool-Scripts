@@ -1,0 +1,1 @@
+//there shouldn't be any way to respawn in this mission

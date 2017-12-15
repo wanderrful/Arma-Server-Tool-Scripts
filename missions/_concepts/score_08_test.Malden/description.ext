@@ -1,0 +1,17 @@
+class CfgNotifications {
+    class SXF_ScoreModified {
+        title = "Score Updated";
+        iconText = "%1";
+        description = "%2";
+    };
+    class SXF_MatchStarted {
+        title = "Match Started!";
+        iconText = "";
+        description = "Match has begun!";
+    };
+    class SXF_MatchFinished {
+        title "FINAL SCORE";
+        iconText = "";
+        description = "%1";
+    };
+};

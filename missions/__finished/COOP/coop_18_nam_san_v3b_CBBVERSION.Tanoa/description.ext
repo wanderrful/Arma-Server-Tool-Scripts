@@ -1,0 +1,33 @@
+class cfgSounds
+{
+	class MissionSuccessObjectiveCompleted
+	{
+		name = "MissionSuccessObjectiveCompleted";
+		sound[] = {"sounds\mission-success-objective-completed.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+	class MissionFailureYourTeamWasWipedOut
+	{
+		name = "MissionFailureYourTeamWasWipedOut";
+		sound[] = {"sounds\mission-failure-your-team-was-wiped-out.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+	class MissionFailureAHostageWasKilled
+	{
+		name = "MissionFailureAHostageWasKilled";
+		sound[] = {"sounds\mission-failure-a-hostage-was-killed.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+};
+
+class cfgNotifications
+{
+	class sxf_MissionStart
+	{
+		title = "Countdown";
+		description = "The mission has started!";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+		duration = 10;
+		priority = 0;
+	};
+};

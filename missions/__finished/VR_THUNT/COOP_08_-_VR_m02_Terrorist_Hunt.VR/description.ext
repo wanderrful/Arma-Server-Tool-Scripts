@@ -1,0 +1,102 @@
+class Params
+{
+	class DesiredEnemyCount
+	{
+		title = "Desired enemy count";
+		values[] = {10, 15, 20, 25, 30, 35, 40, 45, 50};
+		default = 25;
+	};
+	class MissionTimeLimit
+	{
+		title = "Mission time limit (in minutes)";
+		values[] = {3, 5, 10, 15, 20};
+		default = 10;
+	};
+};
+
+class cfgSounds
+{
+	class Gottem
+	{
+		name = "Gottem";
+		sound[] = {"sounds\gottem.ogg", db-5, 1.0};
+		titles[] = {0, ""};
+	};
+	class Airhorn
+	{
+		name = "Airhorn";
+		sound[] = {"sounds\airhorn.ogg", db-10, 1.0};
+		titles[] = {0, ""};
+	};
+	class ATeam
+	{
+		name = "ATeam";
+		sound[] = {"sounds\a-team.ogg", db-10, 1.0};
+		titles[] = {0, ""};
+	};
+	class Airwolf
+	{
+		name = "Airwolf";
+		sound[] = {"sounds\airwolf.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+	class MissionSuccessObjectiveCompleted
+	{
+		name = "MissionSuccessObjectiveCompleted";
+		sound[] = {"sounds\mission-success-objective-completed.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+	class MissionFailureYourTeamWasWipedOut
+	{
+		name = "MissionFailureYourTeamWasWipedOut";
+		sound[] = {"sounds\mission-failure-your-team-was-wiped-out.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+	class MissionFailureAHostageWasKilled
+	{
+		name = "MissionFailureAHostageWasKilled";
+		sound[] = {"sounds\mission-failure-a-hostage-was-killed.ogg", db, 1.0};
+		titles[] = {0, ""};
+	};
+};
+
+class CfgHints
+{
+	class MyVRStuff
+	{
+		displayName = "VR THUNT";
+		class THUNT_IntroHint
+		{	//everything in this layer goes into the Field Manual
+			displayName = "VR THUNT by sixtyfour";
+			displayNameShort = "Mission Info";
+			description = "This is the second in a series of Terrorist Hunt missions inspired by the original Rainbow Six series of games.  Your goal is to eliminate all enemy AI units in the shoothouse.  If all players are dead, all players will respawn together to suit up and begin a new round of play.  You're welcome.";
+            tip = "This is a simple tip text line.";
+			arguments[] = {};
+			class THUNT_IntroSubHint
+			{	//everything in this layer is actually displayed when calling the BIS_fnc_advHint function
+				displayName = "VR THUNT #2 by sixtyfour";
+				displayNameShort = "Basic Mission Information";
+				description = "This is the second in a series of round-based Terrorist Hunt missions inspired by the original Rainbow Six series of games.<br/><br/>%2Your goal is to %3eliminate all %11 enemy AI units%4 in the shoothouse.<br/><br/>%2Use the scroll menu at the white board in front of you to begin the mission.<br/><br/>%2If all players are killed, %3you will respawn together all at once%4 to suit up and begin a new round of play.";
+				tip = "You can press H at any time to see this message again.";
+				arguments[] = 
+				{
+					"paramsArray select 0"
+				};
+				image = "images\goon-logo.jpg";
+				noImage = false;
+		   };
+		};
+	};
+};
+
+class cfgNotifications
+{
+	class sxf_MissionStart
+	{
+		title = "Countdown";
+		description = "A new round has started!";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+		duration = 10;
+		priority = 0;
+	};
+};
